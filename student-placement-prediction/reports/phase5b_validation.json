@@ -1,0 +1,21 @@
+{
+  "phase": "5B",
+  "training_rows": 80000,
+  "cv_rows": 24000,
+  "cv_folds": 3,
+  "test_csv_opened": false,
+  "test_set_used_for_tuning": false,
+  "saved_model_overwritten": false,
+  "results_rows": 3,
+  "all_metrics_finite": true,
+  "all_roc_auc_in_valid_range": true,
+  "engineered_features": [
+    "technical_academic_mean",
+    "experience_activity_count",
+    "career_presence_mean_log1p",
+    "interview_readiness_mean",
+    "leadership_engagement_mean"
+  ],
+  "sklearn_version": "1.8.0",
+  "elapsed_seconds": 3.04
+}

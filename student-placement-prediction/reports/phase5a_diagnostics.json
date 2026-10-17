@@ -1,0 +1,50 @@
+{
+  "phase": "Phase 5A training-only diagnosis",
+  "generated_at_utc": "2026-10-17T12:13:09.957198+00:00",
+  "sklearn_version": "1.8.0",
+  "training_rows": 80000,
+  "cv_rows": 24000,
+  "cv_folds": 3,
+  "random_state": 42,
+  "test_set_read": false,
+  "test_set_used_for_tuning": false,
+  "existing_phase3_model_overwritten": false,
+  "target_counts": {
+    "Placed": 43567,
+    "Not Placed": 36433
+  },
+  "placed_prevalence": 0.5445875,
+  "majority_class_training_f1_for_placed": 0.7051559073215341,
+  "numeric_target_associations": {
+    "backlogs": -0.08453366912020055,
+    "internships_count": 0.06181227994919847,
+    "projects_count": 0.0604756254542821,
+    "coding_skill_score": 0.05135948581398555,
+    "mock_interview_score": 0.04603357232703287,
+    "logical_reasoning_score": 0.035675327680339944,
+    "aptitude_score": 0.032106906648048474,
+    "communication_skill_score": 0.03032126633585601,
+    "leadership_score": 0.022995016902079266,
+    "extracurricular_score": 0.020267455474171765,
+    "cgpa": 0.013819729756666815,
+    "attendance_percentage": -0.00995356362268345,
+    "sleep_hours": -0.006566218888843358,
+    "certifications_count": -0.006260327187681298,
+    "github_repos": 0.005302757960690097,
+    "hackathons_participated": 0.0038641462157300898,
+    "linkedin_connections": 0.003534534875798729,
+    "age": 0.002546371751341812,
+    "study_hours_per_day": -0.0006605239484258234
+  },
+  "best_training_cv_candidate": "Logistic Regression (baseline)",
+  "best_training_cv_roc_auc": 0.5821747018197257,
+  "baseline_logistic_cv_roc_auc": 0.5821747018197257,
+  "limitations": [
+    "Cross-validation uses a stratified 24,000-row subset of training split for runtime feasibility.",
+    "Candidate comparison is screening, not exhaustive hyperparameter optimization.",
+    "The test set is intentionally not opened.",
+    "Dataset provenance and label-generation process are unknown.",
+    "Association does not imply causation; excluding protected/sensitive attributes does not guarantee fairness."
+  ],
+  "elapsed_seconds": 9.05
+}

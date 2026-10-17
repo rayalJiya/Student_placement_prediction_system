@@ -1,0 +1,113 @@
+{
+  "generated_at_utc": "2026-10-17T09:27:41.469163+00:00",
+  "phase": "Phase 4 - one-time held-out test evaluation",
+  "model": "Logistic Regression",
+  "model_artifact": "models/selected_placement_model.joblib",
+  "test_rows": 20000,
+  "training_rows_used_to_fit_selected_model": 80000,
+  "feature_count": 21,
+  "positive_class": "Placed",
+  "threshold": 0.5,
+  "accuracy": 0.57065,
+  "precision_placed": 0.5792586479609381,
+  "recall_placed": 0.7733198677928755,
+  "f1_placed": 0.6623677898792907,
+  "roc_auc": 0.5849669816851554,
+  "balanced_accuracy": 0.550801348037852,
+  "matthews_corrcoef": 0.11358392583131677,
+  "confusion_matrix_labels": [
+    "Not Placed",
+    "Placed"
+  ],
+  "confusion_matrix_rows_actual_cols_predicted": [
+    [
+      2990,
+      6118
+    ],
+    [
+      2469,
+      8423
+    ]
+  ],
+  "tn_not_placed_correct": 2990,
+  "fp_false_placed_prediction": 6118,
+  "fn_missed_placed_student": 2469,
+  "tp_placed_correct": 8423,
+  "test_target_counts": {
+    "Placed": 10892,
+    "Not Placed": 9108
+  },
+  "predicted_target_counts": {
+    "Placed": 14541,
+    "Not Placed": 5459
+  },
+  "test_set_sha256_before": "f3e67ec1fcc03eb522fb818ed6c850c1ee772e4644f0bcc30fc2cbf9becb401f",
+  "test_set_sha256_after": "f3e67ec1fcc03eb522fb818ed6c850c1ee772e4644f0bcc30fc2cbf9becb401f",
+  "test_file_unchanged": true,
+  "test_set_used_for_training_or_selection": false,
+  "fit_or_tuning_performed_in_phase4": false,
+  "features": [
+    "cgpa",
+    "branch",
+    "college_tier",
+    "internships_count",
+    "projects_count",
+    "certifications_count",
+    "coding_skill_score",
+    "aptitude_score",
+    "communication_skill_score",
+    "logical_reasoning_score",
+    "hackathons_participated",
+    "github_repos",
+    "linkedin_connections",
+    "mock_interview_score",
+    "attendance_percentage",
+    "backlogs",
+    "extracurricular_score",
+    "leadership_score",
+    "volunteer_experience",
+    "sleep_hours",
+    "study_hours_per_day"
+  ],
+  "excluded_from_model_features": [
+    "student_id",
+    "salary_package_lpa",
+    "age",
+    "gender"
+  ],
+  "sklearn_version": "1.8.0",
+  "classification_report": {
+    "Not Placed": {
+      "precision": 0.5477193625206082,
+      "recall": 0.3282828282828283,
+      "f1-score": 0.41051692180956956,
+      "support": 9108.0
+    },
+    "Placed": {
+      "precision": 0.5792586479609381,
+      "recall": 0.7733198677928755,
+      "f1-score": 0.6623677898792907,
+      "support": 10892.0
+    },
+    "accuracy": 0.57065,
+    "macro avg": {
+      "precision": 0.563489005240773,
+      "recall": 0.550801348037852,
+      "f1-score": 0.5364423558444301,
+      "support": 20000.0
+    },
+    "weighted avg": {
+      "precision": 0.5648956573714118,
+      "recall": 0.57065,
+      "f1-score": 0.5476749045603396,
+      "support": 20000.0
+    }
+  },
+  "limitations": [
+    "This is a single evaluation of one previously selected model on one held-out split; it is not a guarantee of future performance.",
+    "The dataset's real-world provenance and representativeness have not been independently established.",
+    "Excluding age and gender does not guarantee fairness because other predictors may be proxies.",
+    "The target is historical placement status; model associations do not establish causation.",
+    "Predicted probabilities may not be calibrated and must not be presented as guaranteed individual outcomes."
+  ]
+}

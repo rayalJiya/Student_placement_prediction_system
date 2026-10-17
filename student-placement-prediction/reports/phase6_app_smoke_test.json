@@ -1,0 +1,17 @@
+{
+  "check": "saved model inference integration smoke test",
+  "input_rows": 1,
+  "input_feature_count": 21,
+  "prediction_shape": [
+    1
+  ],
+  "probability_shape": [
+    1,
+    2
+  ],
+  "probabilities_finite": true,
+  "probabilities_in_0_1": true,
+  "forbidden_features_absent": true,
+  "passed": true,
+  "note": "Uses one median/mode example row from training data only to test code integration; this is not a performance evaluation."
+}

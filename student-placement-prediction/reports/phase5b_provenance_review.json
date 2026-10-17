@@ -1,0 +1,6 @@
+{
+  "overview_mentions_source_or_generation_method": false,
+  "dataset_provenance_confirmed": false,
+  "label_generation_rule_documented": false,
+  "note": "Project overview defines the target and expected columns but does not establish the dataset publisher, collection process, or placement_status generation rule. These cannot be inferred reliably from observed correlations alone."
+}

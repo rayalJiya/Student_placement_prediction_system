@@ -1,0 +1,166 @@
+{
+  "generated_at_utc": "2026-10-17T08:58:29.632236+00:00",
+  "source": "/mnt/data/student_placement_prediction_dataset_2026.csv",
+  "eda_data_scope": "training set only; test split was not used for analysis",
+  "split": {
+    "train_rows": 80000,
+    "test_rows": 20000,
+    "test_size": 0.2,
+    "random_state": 42,
+    "train_target_counts": {
+      "Placed": 43567,
+      "Not Placed": 36433
+    },
+    "train_target_percentages": {
+      "Not Placed": 45.54125,
+      "Placed": 54.45875
+    },
+    "test_target_counts_saved_for_split_validation_only": {
+      "Placed": 10892,
+      "Not Placed": 9108
+    }
+  },
+  "phase1_artifact_consistency": {
+    "checks": {
+      "actual_shape_matches_config": true,
+      "actual_columns_match_config": true,
+      "saved_audit_shape_matches_actual": true,
+      "saved_audit_columns_match_actual": true,
+      "saved_audit_dtypes_match_actual": true,
+      "saved_audit_missing_counts_match_actual": true,
+      "saved_audit_target_counts_match_actual": true,
+      "saved_audit_expected_columns_match_config": true,
+      "saved_audit_policy_matches_config": true,
+      "saved_audit_specification_flags_match_actual": true,
+      "saved_audit_duplicate_counts_match_actual": true,
+      "target_mapping_covers_actual_labels": true,
+      "id_excluded_from_model_features": true,
+      "salary_excluded_from_model_features": true,
+      "age_gender_excluded_from_model_features": true,
+      "target_excluded_from_model_features": true,
+      "configured_features_exist": true
+    },
+    "passed": true,
+    "failed_checks": []
+  },
+  "target_correlations_numeric_pearson": {
+    "backlogs": -0.08453366912019966,
+    "internships_count": 0.06181227994919832,
+    "projects_count": 0.06047562545428258,
+    "coding_skill_score": 0.051359485813985285,
+    "mock_interview_score": 0.04603357232703182,
+    "logical_reasoning_score": 0.0356753276803394,
+    "aptitude_score": 0.0321069066480484,
+    "communication_skill_score": 0.030321266335856117,
+    "leadership_score": 0.02299501690207921,
+    "extracurricular_score": 0.02026745547417176,
+    "cgpa": 0.013819729756666706,
+    "attendance_percentage": -0.009953563622683544,
+    "sleep_hours": -0.006566218888843392,
+    "certifications_count": -0.006260327187681182,
+    "github_repos": 0.005302757960689969,
+    "hackathons_participated": 0.003864146215730057,
+    "linkedin_connections": 0.0035345348757987627,
+    "age": 0.002546371751341758,
+    "study_hours_per_day": -0.0006605239484258637
+  },
+  "strongest_absolute_numeric_target_correlations_top8": {
+    "backlogs": -0.08453366912019966,
+    "internships_count": 0.06181227994919832,
+    "projects_count": 0.06047562545428258,
+    "coding_skill_score": 0.051359485813985285,
+    "mock_interview_score": 0.04603357232703182,
+    "logical_reasoning_score": 0.0356753276803394,
+    "aptitude_score": 0.0321069066480484,
+    "communication_skill_score": 0.030321266335856117
+  },
+  "categorical_placement_rate_extremes": [
+    {
+      "feature": "gender",
+      "highest_observed_placement_rate_category": "Male",
+      "highest_rate_pct": 54.509795739531384,
+      "lowest_observed_placement_rate_category": "Female",
+      "lowest_rate_pct": 54.38246390820367,
+      "note": "Descriptive association only; category sizes and confounding matter."
+    },
+    {
+      "feature": "branch",
+      "highest_observed_placement_rate_category": "Civil",
+      "highest_rate_pct": 55.00994530084535,
+      "lowest_observed_placement_rate_category": "ECE",
+      "lowest_rate_pct": 53.72122226873168,
+      "note": "Descriptive association only; category sizes and confounding matter."
+    },
+    {
+      "feature": "college_tier",
+      "highest_observed_placement_rate_category": "Tier 3",
+      "highest_rate_pct": 54.54317269076305,
+      "lowest_observed_placement_rate_category": "Tier 2",
+      "lowest_rate_pct": 54.40595791472984,
+      "note": "Descriptive association only; category sizes and confounding matter."
+    },
+    {
+      "feature": "volunteer_experience",
+      "highest_observed_placement_rate_category": "Yes",
+      "highest_rate_pct": 54.579281448359964,
+      "lowest_observed_placement_rate_category": "No",
+      "lowest_rate_pct": 54.378475186905185,
+      "note": "Descriptive association only; category sizes and confounding matter."
+    }
+  ],
+  "age_decision": {
+    "decision": "exclude from model features; retain for training-only EDA and potential audit",
+    "reason": "age spans a narrow 18-24 range and class-wise averages are nearly identical; age is also demographic and offers little demonstrated incremental value at this stage",
+    "training_mean_age_by_target": {
+      "Not Placed": 21.00120769631927,
+      "Placed": 21.011430670002525
+    }
+  },
+  "gender_decision": {
+    "decision": "exclude from model features; retain for descriptive fairness audit only",
+    "reason": "gender is a sensitive demographic attribute; excluding it is a conservative baseline choice, though other features can still act as proxies and exclusion alone does not guarantee fairness",
+    "training_observed_placement_rate_pct_by_gender": {
+      "Female": 54.38246390820367,
+      "Male": 54.509795739531384
+    }
+  },
+  "model_feature_policy": {
+    "feature_count": 21,
+    "features": [
+      "cgpa",
+      "branch",
+      "college_tier",
+      "internships_count",
+      "projects_count",
+      "certifications_count",
+      "coding_skill_score",
+      "aptitude_score",
+      "communication_skill_score",
+      "logical_reasoning_score",
+      "hackathons_participated",
+      "github_repos",
+      "linkedin_connections",
+      "mock_interview_score",
+      "attendance_percentage",
+      "backlogs",
+      "extracurricular_score",
+      "leadership_score",
+      "volunteer_experience",
+      "sleep_hours",
+      "study_hours_per_day"
+    ],
+    "excluded_columns": [
+      "student_id",
+      "salary_package_lpa",
+      "age",
+      "gender",
+      "placement_status"
+    ],
+    "app_input_policy": "Streamlit form must request exactly MODEL_FEATURES; no default age or gender values because neither is a model input."
+  },
+  "interpretation_limits": [
+    "EDA relationships are descriptive and do not establish causation.",
+    "A random split measures performance on a similar data distribution, not necessarily on future cohorts or other colleges.",
+    "Dataset provenance and possible synthetic-data generation should be verified before making real-world claims."
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "phase": "Phase 5A",
+  "script_exit_code": 0,
+  "training_rows": 80000,
+  "cv_rows": 24000,
+  "cv_folds": 3,
+  "candidate_count": 5,
+  "all_reported_scores_finite": true,
+  "all_auc_and_f1_in_0_1": true,
+  "phase5a_script_opens_test_csv": false,
+  "phase5a_script_overwrites_selected_model": false,
+  "test_file_hash_unchanged_during_phase5a": true,
+  "best_training_cv_model": "Logistic Regression (baseline)",
+  "best_training_cv_roc_auc": 0.5821747018197257,
+  "baseline_logistic_roc_auc": 0.5821747018197257,
+  "note": "Test file hash was compared before/after to verify file integrity; no test labels or metrics were used in Phase 5A."
+}

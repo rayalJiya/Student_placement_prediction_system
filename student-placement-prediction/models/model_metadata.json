@@ -1,0 +1,40 @@
+{
+  "selected_model": "Logistic Regression",
+  "target_column": "placement_status",
+  "target_mapping": {
+    "Not Placed": 0,
+    "Placed": 1
+  },
+  "model_features": [
+    "cgpa",
+    "branch",
+    "college_tier",
+    "internships_count",
+    "projects_count",
+    "certifications_count",
+    "coding_skill_score",
+    "aptitude_score",
+    "communication_skill_score",
+    "logical_reasoning_score",
+    "hackathons_participated",
+    "github_repos",
+    "linkedin_connections",
+    "mock_interview_score",
+    "attendance_percentage",
+    "backlogs",
+    "extracurricular_score",
+    "leadership_score",
+    "volunteer_experience",
+    "sleep_hours",
+    "study_hours_per_day"
+  ],
+  "excluded_columns": [
+    "student_id",
+    "salary_package_lpa",
+    "age",
+    "gender"
+  ],
+  "training_rows": 80000,
+  "selection_metric": "mean 3-fold cross-validated ROC-AUC among non-dummy models; ties broken by F1 for Placed then accuracy",
+  "test_set_used_during_selection": false
+}

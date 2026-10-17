@@ -1,0 +1,96 @@
+{
+  "project": "Student Placement Prediction System",
+  "validation_type": "file, syntax, schema, and one-row training-data inference smoke checks",
+  "held_out_test_metrics_calculated": false,
+  "model_fitted_or_tuned": false,
+  "checks_passed": 17,
+  "checks_total": 17,
+  "passed": true,
+  "checks": [
+    {
+      "check": "compile:app.py",
+      "passed": true,
+      "detail": "Python syntax compiled"
+    },
+    {
+      "check": "compile:phase1_audit.py",
+      "passed": true,
+      "detail": "Python syntax compiled"
+    },
+    {
+      "check": "compile:phase2_split_eda.py",
+      "passed": true,
+      "detail": "Python syntax compiled"
+    },
+    {
+      "check": "compile:phase3_train_select.py",
+      "passed": true,
+      "detail": "Python syntax compiled"
+    },
+    {
+      "check": "compile:phase4_evaluate.py",
+      "passed": true,
+      "detail": "Python syntax compiled"
+    },
+    {
+      "check": "compile:phase5a_diagnose_compare.py",
+      "passed": true,
+      "detail": "Python syntax compiled"
+    },
+    {
+      "check": "compile:phase5b_feature_engineering.py",
+      "passed": true,
+      "detail": "Python syntax compiled"
+    },
+    {
+      "check": "exists:raw dataset",
+      "passed": true,
+      "detail": "data\\raw\\student_placement_prediction_dataset_2026.csv"
+    },
+    {
+      "check": "exists:training split",
+      "passed": true,
+      "detail": "data\\processed\\train.csv"
+    },
+    {
+      "check": "exists:test split",
+      "passed": true,
+      "detail": "data\\processed\\test.csv"
+    },
+    {
+      "check": "exists:selected model",
+      "passed": true,
+      "detail": "models\\selected_placement_model.joblib"
+    },
+    {
+      "check": "exists:model metadata",
+      "passed": true,
+      "detail": "models\\model_metadata.json"
+    },
+    {
+      "check": "dataset row counts",
+      "passed": true,
+      "detail": "raw=100000, train=80000, test=20000"
+    },
+    {
+      "check": "train/test columns align",
+      "passed": true,
+      "detail": "Train/test columns match raw schema order after intentionally excluding identifier and post-outcome salary"
+    },
+    {
+      "check": "target labels valid",
+      "passed": true,
+      "detail": "Placement target contains only configured labels"
+    },
+    {
+      "check": "feature policy",
+      "passed": true,
+      "detail": "features=21; forbidden inputs absent=True"
+    },
+    {
+      "check": "saved model inference smoke test",
+      "passed": true,
+      "detail": "prediction=Placed; probabilities=[[0.36599657647173167, 0.6340034235282683]]"
+    }
+  ]
+}

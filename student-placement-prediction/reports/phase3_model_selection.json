@@ -1,0 +1,88 @@
+{
+  "generated_at_utc": "2026-10-17T09:13:22.420484+00:00",
+  "phase": "Phase 3 - baseline model training and selection",
+  "sklearn_version": "1.8.0",
+  "training_rows": 80000,
+  "cv_rows": 24000,
+  "cv_sampling": "stratified random subset from training split only",
+  "training_target_counts": {
+    "Placed": 43567,
+    "Not Placed": 36433
+  },
+  "feature_count": 21,
+  "features": [
+    "cgpa",
+    "branch",
+    "college_tier",
+    "internships_count",
+    "projects_count",
+    "certifications_count",
+    "coding_skill_score",
+    "aptitude_score",
+    "communication_skill_score",
+    "logical_reasoning_score",
+    "hackathons_participated",
+    "github_repos",
+    "linkedin_connections",
+    "mock_interview_score",
+    "attendance_percentage",
+    "backlogs",
+    "extracurricular_score",
+    "leadership_score",
+    "volunteer_experience",
+    "sleep_hours",
+    "study_hours_per_day"
+  ],
+  "excluded_from_model_features": [
+    "student_id",
+    "salary_package_lpa",
+    "age",
+    "gender",
+    "placement_status"
+  ],
+  "positive_label": "Placed",
+  "cv": {
+    "method": "StratifiedKFold",
+    "n_splits": 3,
+    "cv_rows": 24000,
+    "cv_sampling": "stratified random subset of training split only; final selected model is refit on all training rows",
+    "shuffle": true,
+    "random_state": 42,
+    "selection_metric": "mean cross-validated ROC-AUC among non-dummy models; ties broken by F1 for Placed then accuracy",
+    "test_set_accessed": false
+  },
+  "models_compared": [
+    "Dummy Baseline (majority class)",
+    "Logistic Regression",
+    "Random Forest",
+    "Linear SVM",
+    "KNN"
+  ],
+  "selected_model": "Logistic Regression",
+  "selected_model_cv_metrics": {
+    "model": "Logistic Regression",
+    "cv_folds": 3,
+    "fit_seconds_total": 0.337,
+    "score_seconds_total": 0.465,
+    "accuracy_mean": 0.5722083333333333,
+    "accuracy_std": 0.006252915986428533,
+    "precision_placed_mean": 0.5812110035169012,
+    "precision_placed_std": 0.004270832213599936,
+    "recall_placed_mean": 0.7674063121670942,
+    "recall_placed_std": 0.006326519740866049,
+    "f1_placed_mean": 0.6614551081424592,
+    "f1_placed_std": 0.005111691929799042,
+    "roc_auc_mean": 0.5821747018197257,
+    "roc_auc_std": 0.0012089822459207776
+  },
+  "model_artifact": "models/selected_placement_model.joblib",
+  "cv_results": "reports/phase3_cv_results.csv",
+  "elapsed_seconds_including_final_fit": 8.2,
+  "limitations": [
+    "These are cross-validation estimates on a stratified subset of the training split, not final test-set metrics. A dummy majority-class model is included to show how much performance can be achieved without learning feature patterns.",
+    "The dataset's real-world provenance has not been established; results should not be interpreted as validated real-world placement probabilities.",
+    "The baseline settings are not an exhaustive hyperparameter search.",
+    "A dummy majority-class baseline is included for context; F1 alone can reward predicting the majority class, so ROC-AUC is the primary selection metric.",
+    "Excluding age and gender does not by itself guarantee fairness because other features may act as proxies."
+  ]
+}
